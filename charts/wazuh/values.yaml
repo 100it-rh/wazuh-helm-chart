@@ -289,3 +289,9 @@ wazuh:
     extraConf: ""
     localInternalOptions: |
       {{- include "wazuh.worker.local_internal_options" . | indent 2 -}}
+
+certificate_authority:
+  rootCAPrivateKeySecret: ""
+  rootCACertificateSecret: ""
+  agentPrivateKeySecret: ""
+  agentCertificateSecret: ""
