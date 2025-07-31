@@ -31,6 +31,10 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
+      nodeSelector:
+        {{- with .Values.wazuh.master.nodeSelector }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}  
       volumes:
         - name: config
           configMap:
