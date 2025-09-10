@@ -342,7 +342,7 @@ uiSettings.overrides.defaultRoute: /app/wz-home
       <after_registration_time>1h</after_registration_time>
     </force>
     <purge>no</purge>
-    <use_password>yes</use_password>
+    <use_password>no</use_password>
     <ciphers>HIGH:!ADH:!EXP:!MD5:!RC4:!3DES:!CAMELLIA:@STRENGTH</ciphers>
     <!-- <ssl_agent_ca></ssl_agent_ca> -->
     <ssl_verify_host>no</ssl_verify_host>
@@ -701,7 +701,7 @@ vulnerability-detection.disable_scan_manager=0
       <after_registration_time>1h</after_registration_time>
     </force>
     <purge>no</purge>
-    <use_password>yes</use_password>
+    <use_password>no</use_password>
     <ciphers>HIGH:!ADH:!EXP:!MD5:!RC4:!3DES:!CAMELLIA:@STRENGTH</ciphers>
     <!-- <ssl_agent_ca></ssl_agent_ca> -->
     <ssl_verify_host>no</ssl_verify_host>

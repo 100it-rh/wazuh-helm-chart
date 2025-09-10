@@ -94,24 +94,29 @@ spec:
               subPath: script.sh
             {{- if .Values.certificate_authority.rootCAPrivateKeySecret }}
             - name: root-ca-private-key
-              mountPath: "/var/ossec/etc/root_ca_key/"
+              mountPath: "/var/ossec/etc/wazuh-root-ca-key"
+              subPath: wazuh-root-ca-key
               readOnly: true
             {{- end }}
             {{- if .Values.certificate_authority.rootCACertificateSecret }}
             - name: root-ca-certificate
-              mountPath: "/var/ossec/etc/root_ca_cert/"
+              mountPath: "/var/ossec/etc/wazuh-root-ca-cert"
+              subPath: wazuh-root-ca-cert
               readOnly: true
             {{- end }}
             {{- if .Values.certificate_authority.agentPrivateKeySecret }}
             - name: wazuh-agent-private-key
-              mountPath: "/var/ossec/etc/agent_key/"
+              mountPath: "/var/ossec/etc/wazuh-agent-private-key"
+              subPath: wazuh-agent-private-key
               readOnly: true
             {{- end }}
             {{- if .Values.certificate_authority.agentCertificateSecret }}
             - name: wazuh-agent-certificate
-              mountPath: "/var/ossec/etc/agent_cert/"
+              mountPath: "/var/ossec/etc/wazuh-agent-certificate"
+              subPath: wazuh-agent-certificate
               readOnly: true
             {{- end }}
+
       containers:
         - name: wazuh-manager
           image: "{{ .Values.wazuh.images.repository }}:{{ .Values.wazuh.images.tag }}"
@@ -182,22 +187,26 @@ spec:
               subPath: filebeat/var/lib/filebeat
             {{- if .Values.certificate_authority.rootCAPrivateKeySecret }}
             - name: root-ca-private-key
-              mountPath: "/var/ossec/etc/root_ca_key/"
+              mountPath: "/var/ossec/etc/wazuh-root-ca-key"
+              subPath: wazuh-root-ca-key
               readOnly: true
             {{- end }}
             {{- if .Values.certificate_authority.rootCACertificateSecret }}
             - name: root-ca-certificate
-              mountPath: "/var/ossec/etc/root_ca_cert/"
+              mountPath: "/var/ossec/etc/wazuh-root-ca-cert"
+              subPath: wazuh-root-ca-cert
               readOnly: true
             {{- end }}
             {{- if .Values.certificate_authority.agentPrivateKeySecret }}
             - name: wazuh-agent-private-key
-              mountPath: "/var/ossec/etc/agent_key/"
+              mountPath: "/var/ossec/etc/wazuh-agent-private-key"
+              subPath: wazuh-agent-private-key
               readOnly: true
             {{- end }}
             {{- if .Values.certificate_authority.agentCertificateSecret }}
             - name: wazuh-agent-certificate
-              mountPath: "/var/ossec/etc/agent_cert/"
+              mountPath: "/var/ossec/etc/wazuh-agent-certificate"
+              subPath: wazuh-agent-certificate
               readOnly: true
             {{- end }}
           ports:
