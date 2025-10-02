@@ -11,3 +11,5 @@ data:
     {{- tpl .Values.indexer.config.internalUsers . | indent 2 }}
   opensearch.yml: |
     {{- tpl .Values.indexer.config.opensearch . | indent 2 }}
+  roles_mapping.yml: |
+    {{- tpl .Values.indexer.config.rolesMapping . | indent 2 }}

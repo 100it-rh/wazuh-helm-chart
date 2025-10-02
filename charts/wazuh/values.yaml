@@ -136,6 +136,8 @@ indexer:
       {{- include "wazuh.indexer.opensearchConfig" . | indent 2 -}}
     internalUsers: |-
       {{- include "wazuh.indexer.internalUsers" . | indent 2 -}}
+    rolesMapping: |-
+      {{- include "wazuh.indexer.rolesMapping" . | indent 2 -}}
 
   env:
     OPENSEARCH_JAVA_OPTS: "-Xms1g -Xmx1g -Dlog4j2.formatMsgNoLookups=true"
@@ -153,7 +155,8 @@ indexer:
   cred:
     existingSecret: ""
     username: "admin"
-    password: "SecretPassword"    
+    password: "SecretPassword"
+    password_bcrypt: "$2y$12$K/SpwjtB.wOHJ/Nc6GVRDuc1h0rM1DfvziFRNPtk27P.c4yDr9njO"   
 
 
 wazuh:
